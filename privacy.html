@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Calendar Paint privacy policy</title>
+<style>
+  :root { --bg: #ffffff; --text: #1f1f1f; --muted: #5f6368; --accent: #1e4fd8; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1f1f1f; --text: #e8eaed; --muted: #9aa0a6; --accent: #8ab4f8; } }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 "Segoe UI", Roboto, system-ui, Arial, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 4px; }
+  h2 { font-size: 19px; margin: 32px 0 8px; }
+  p, li { color: var(--text); }
+  .muted { color: var(--muted); }
+  a { color: var(--accent); }
+  code { font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <p><a href="./">← Calendar Paint</a></p>
+  <h1>Calendar Paint privacy policy</h1>
+  <p class="muted">Last updated: 18 September 2026</p>
+
+  <p>Calendar Paint is a Chrome extension that colors events on Google Calendar (calendar.google.com) based on rules you create. The short version: everything stays in your browser.</p>
+
+  <h2>What the extension reads</h2>
+  <p>To color an event, the extension reads the event text that Google Calendar already shows on the page: the title, whether it is an all-day event, whether it repeats, and Calendar's internal id for that event occurrence. It does this only on calendar.google.com and only inside your browser.</p>
+
+  <h2>What the extension stores</h2>
+  <ul>
+    <li><strong>Your rules, palette and preferences.</strong> Stored with <code>chrome.storage.sync</code>, so Chrome can sync them between your own signed-in Chrome browsers. If Chrome sync storage is full or unavailable, they are stored on your device only.</li>
+    <li><strong>Manual event colors.</strong> When you color a single event by hand, the extension stores the color you picked (or that you chose to keep Google's color) and Calendar's internal id for that event occurrence. For a recurring event colored as a whole series, the series id is stored instead. These ids include the calendar's id, which for your own calendar is often your email address. If Calendar shows no id, a one-way hash of the event's on-screen description is stored instead. On your device only.</li>
+    <li><strong>Rule activity.</strong> For each rule, when it last colored an event, when it was turned off or on, and when you chose "Keep" on an unused-rule hint. Rule ids and dates only, no titles. On your device only.</li>
+    <li><strong>An install record.</strong> The date the extension was first installed and its version, on your device and in your own Chrome profile's sync storage. It keeps early users' access to features if paid plans are introduced later. It contains no personal information.</li>
+  </ul>
+  <p>Nothing else is stored. Event titles are not stored.</p>
+
+  <h2>What the extension sends</h2>
+  <p>Nothing. The extension makes no network requests. It has no server, no analytics, no advertising, no tracking and no third-party code. Event titles, descriptions, attendees, dates and all other calendar content never leave your browser.</p>
+  <p>Settings you choose to export are saved as a file on your computer.</p>
+
+  <h2>What the extension changes</h2>
+  <p>Only how events look on calendar.google.com, inside your browser. It never changes your events, calendars or any data in your Google account. Turning the extension off or removing it restores Google Calendar's own appearance.</p>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><code>storage</code>: to save your rules, palette, preferences and manual colors.</li>
+    <li>Access to <code>https://calendar.google.com/*</code>: to read event titles on the page and change their colors. The extension does not run on any other site.</li>
+    <li><code>scripting</code>: to start the extension in Google Calendar tabs that are already open when it is installed or updated, so you don't have to reload them. It only runs the extension's own code on calendar.google.com.</li>
+  </ul>
+
+  <h2>Selling and sharing data</h2>
+  <p>We do not sell, share or transfer any user data. We do not use data for advertising, creditworthiness or any purpose other than coloring your calendar.</p>
+
+  <h2>Removing your data</h2>
+  <p>Settings → <strong>Reset everything</strong> deletes your rules, palette, preferences and manual colors. Uninstalling the extension removes everything it stored on your device. Chrome may keep synced settings in your Chrome sync data until you reset them or clear Chrome sync.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the new version will be posted at this address with a new date. A future feature that needs any data to leave your browser (for example, optional sync of colors to Google Calendar's own labels) will be off by default and will ask for your permission first.</p>
+
+  <h2>Contact</h2>
+  <p>Questions: <a href="mailto:support@enuf.ai">support@enuf.ai</a></p>
+</main>
+</body>
+</html>

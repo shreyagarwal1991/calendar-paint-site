@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Calendar Paint colors Google Calendar events automatically with simple title rules. No sign-in. Everything runs in your browser.">
+<title>Calendar Paint: automatic colors for Google Calendar</title>
+<style>
+  :root { --bg: #ffffff; --text: #1f1f1f; --muted: #5f6368; --accent: #1e4fd8; --card: #f4f7fe; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1f1f1f; --text: #e8eaed; --muted: #9aa0a6; --accent: #8ab4f8; --card: #2a2b2e; } }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 "Segoe UI", Roboto, system-ui, Arial, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 20px; margin: 36px 0 8px; }
+  .lead { font-size: 18px; color: var(--muted); margin: 0 0 24px; }
+  .card { background: var(--card); border-radius: 12px; padding: 16px 20px; }
+  a { color: var(--accent); }
+  dt { font-weight: 600; margin-top: 16px; }
+  dd { margin: 4px 0 0; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Calendar Paint</h1>
+  <p class="lead">Automatic colors for Google Calendar. Write a rule like “title contains Gym → green” once, and every matching event stays colored, including every repeat of a recurring event.</p>
+
+  <div class="card">
+    <strong>Need help?</strong> Email <a href="mailto:support@enuf.ai">support@enuf.ai</a>. Tell us your Chrome version and which Calendar view you were using.
+  </div>
+
+  <h2>What it does</h2>
+  <ul>
+    <li>Colors events by title: contains, starts with, is exactly, regular expressions and more. The first matching rule wins.</li>
+    <li>Recurring events stay colored. Coloring one by hand colors the whole series by default.</li>
+    <li>Text switches to black or white automatically so it stays readable.</li>
+    <li>Open any event to see why it has its color, edit that rule, or keep Google's color for that event.</li>
+    <li>No sign-in, no account, no server. Everything runs in your browser.</li>
+  </ul>
+
+  <h2>Common questions</h2>
+  <dl>
+    <dt>Colors are not showing.</dt>
+    <dd>Open the Calendar Paint window from the toolbar. The “Calendar Paint Health” panel says whether it is working. If it asks you to, reload your Google Calendar tab once.</dd>
+    <dt>Only some events are colored.</dt>
+    <dd>Rules run top to bottom and the first match wins. Open a rule to see a live preview of the events it matches. The rules list also says when a higher rule wins an event.</dd>
+    <dt>Why does this event have this color?</dt>
+    <dd>Click the event in Google Calendar. Under “Event color” it says which rule, manual color or default decided it, with links to edit the rule or keep Google's color.</dd>
+    <dt>All-day or recurring filters do not match.</dt>
+    <dd>These filters rely on Calendar's English interface. Rules without filters work in every language.</dd>
+    <dt>I want Google's colors back.</dt>
+    <dd>Use the switch at the top of the Calendar Paint window. Google Calendar looks exactly as before.</dd>
+    <dt>Do my colors show on my phone?</dt>
+    <dd>Not yet. Chrome extensions do not run in the Google Calendar mobile apps. Showing your colors on your phone is planned.</dd>
+    <dt>Does it read or send my calendar?</dt>
+    <dd>It reads the event titles Google Calendar already shows, only on calendar.google.com, and only to decide colors. Nothing leaves your browser. See the <a href="privacy.html">privacy policy</a>.</dd>
+  </dl>
+
+  <footer>
+    <p><a href="privacy.html">Privacy policy</a> · <a href="mailto:support@enuf.ai">support@enuf.ai</a></p>
+    <p>Calendar Paint is an independent extension. It is not affiliated with or endorsed by Google. Google Calendar is a trademark of Google LLC.</p>
+  </footer>
+</main>
+</body>
+</html>
