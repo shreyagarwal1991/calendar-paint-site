@@ -6,6 +6,10 @@
 <meta name="color-scheme" content="light dark">
 <meta name="description" content="Calendar Paint colors Google Calendar events automatically with simple title rules. No sign-in. Everything runs in your browser.">
 <title>Calendar Paint: automatic colors for Google Calendar</title>
+<meta property="og:title" content="Calendar Paint: automatic colors for Google Calendar">
+<meta property="og:description" content="Write a rule once and every matching event stays colored. No sign-in. Everything runs in your browser.">
+<meta property="og:image" content="https://shreyagarwal1991.github.io/calendar-paint-site/media/calendar-paint-poster.jpg">
+<meta property="og:video" content="https://shreyagarwal1991.github.io/calendar-paint-site/media/calendar-paint.mp4">
 <style>
   :root { --bg: #ffffff; --text: #1f1f1f; --muted: #5f6368; --accent: #1e4fd8; --card: #f4f7fe; }
   @media (prefers-color-scheme: dark) { :root { --bg: #1f1f1f; --text: #e8eaed; --muted: #9aa0a6; --accent: #8ab4f8; --card: #2a2b2e; } }
@@ -19,12 +23,32 @@
   dt { font-weight: 600; margin-top: 16px; }
   dd { margin: 4px 0 0; }
   footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+  /* The video is wider than the text column. */
+  .demo { width: min(1040px, calc(100vw - 32px)); margin: 8px 0 32px 50%; transform: translateX(-50%); }
+  .demo video { display: block; width: 100%; height: auto; border-radius: 14px; background: #eef3fe;
+    box-shadow: 0 18px 50px rgba(32,33,36,.20), 0 2px 8px rgba(32,33,36,.10); }
+  .demo figcaption { margin-top: 10px; text-align: center; color: var(--muted); font-size: 14px; }
 </style>
 </head>
 <body>
 <main>
   <h1>Calendar Paint</h1>
   <p class="lead">Automatic colors for Google Calendar. Write a rule like “title contains Gym → green” once, and every matching event stays colored, including every repeat of a recurring event.</p>
+
+  <figure class="demo">
+    <video id="demo" src="media/calendar-paint.mp4" poster="media/calendar-paint-poster.jpg" width="1920" height="1080"
+      controls muted loop playsinline preload="metadata"
+      aria-label="Calendar Paint in action: writing color rules, recurring events, and why an event has its color"></video>
+    <figcaption>See it in action: one rule colors every matching event. No sound.</figcaption>
+  </figure>
+  <script>
+    // Plays on its own, muted, unless the visitor prefers reduced motion.
+    const demo = document.getElementById("demo");
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      demo.autoplay = true;
+      demo.play().catch(() => {});
+    }
+  </script>
 
   <div class="card">
     <strong>Need help?</strong> Email <a href="mailto:support@enuf.ai">support@enuf.ai</a>. Tell us your Chrome version and which Calendar view you were using.
